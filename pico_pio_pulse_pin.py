@@ -16,10 +16,10 @@ def pulse_high_to_low():
     # Pull the pulse duration (in cycles) from the FIFO
     pull()               # blocking pull
     mov(x, osr)          # move to x register
-    set(pins, 0)         # set pin to 1
+    set(pins, 0)         # set pin to 0
     label("pulse_loop")  # Loop: decrement x until it reaches 0
     jmp(x_dec, "pulse_loop")
-    set(pins, 1)         # set pin to 0
+    set(pins, 1)         # set pin to 1
 
 def pulse_us(pin_num=0, init_level=0, microseconds=1):
     # At 1 MHz clock, each cycle = 1 microsecond
