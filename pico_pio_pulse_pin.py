@@ -23,7 +23,7 @@ def pulse_high_to_low():
 
 def pulse_us(pin_num=0, init_level=0, microseconds=1):
     # At 1 MHz clock, each cycle = 1 microsecond
-    cycles = max(1, microseconds - 2) # Subtract 2 for set instructions overhead
+    cycles = max(1, microseconds - 2) # Subtract 2 for set instructions overhead, min value is 1
     if (init_level == 0):
         sm = StateMachine(0, pulse_low_to_high, freq=1_000_000, set_base=Pin(pin_num))
     else:
