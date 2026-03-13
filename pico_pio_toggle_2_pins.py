@@ -63,5 +63,5 @@ def init_pins(pin0_num=0, init_level=0b00):
     pin1.value((init_level >> 1) & 1)
 
 # Examples
-delay_pins_us(0,0b01,100)   # pin0_num 0, pin1_num 1, initial value pin0 low pin1 high, 100 microsecond delay
-
+init_pins(0, 0b01) # pin 0 is high and pin 1 is low initially 
+delay_pins_us(0,0b01,100)   # pin0_num 0, pin1_num 1, initial value pin0 high pin1 low, 100 microsecond delay
